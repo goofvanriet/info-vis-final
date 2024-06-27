@@ -1,68 +1,26 @@
-# Dataset and preprocessing
+# Datasets en Voorbewerking
 
-At first, we decided that each team member has to find at least one dataset of
-interest with sufficient data from which at least two perspectives can be
-induced. During the first team call, every dataset was discussed along with
-possible correlations. In the end, we chose the 2014-2022 datasets from the
-[Stack Overflow Annual Developer Survey](https://insights.stackoverflow.com/survey),
-as these datasets have correlations that could be of use for a potential topic.
-After some brainstorming during team meetings, we decided to dive into the world
-of gender pay gaps, as the dataset contains sufficient variables that can be
-used for two perspectives.
+Bij de start van dit project hebben we het onderwerp geselecteerd om gerichter te kunnen zoeken naar relevante datasets. Na het vaststellen van ons onderwerp hebben we een uitgebreide zoektocht uitgevoerd naar datasets die waardevolle gegevens bevatten voor onze analyse. Tijdens een teamvergadering hebben we deze datasets uitvoerig besproken en onderzocht op mogelijke correlaties tussen de verschillende databronnen. Dit proces hielp ons om het verhaal vanuit twee verschillende perspectieven steeds verder aan te scherpen. Uiteindelijk hebben we besloten om vijf datasets te gebruiken: vier afkomstig van [Our World in Data](https://ourworldindata.org/) en één van [Human Developments Reports](https://hdr.undp.org/). Door het combineren van deze data konden we interessante correlaties visualiseren die ondersteunend waren voor beide invalshoeken van ons verhaal. Na diverse overleggen en brainstormsessies hebben we ons verdiept in de relatie tussen de welvaart van landen en trends in CO2-uitstoot, waarbij we specifiek keken naar hoe de variabelen uit onze gekozen datasets beide verhaallijnen konden ondersteunen.
 
-## Cleaning
+## Schoonmaak
 
-Each Stack Overflow dataset contains at least some changes compared to other
-years, such as column renaming or structural changes. We had to go through two
-phases in order to clean everything properly. The first phase is where columns
-are renamed and restructured in order to merge them together. Columns have been
-manually merged by inspecting them one by one and merging the ones containing
-roughly the same name or content in terms of what they represent. Columns that
-were not of use were immediately excluded during this process.
+In dit project hebben we een grondige data schoonmaak uitgevoerd om ervoor te zorgen dat onze visualisaties betrouwbaar zijn. Allereerst hebben we de relevante kolommen uit de verschillende datasets geselecteerd en deze samengevoegd in een nieuwe dataset. Dit was nodig om een duidelijk overzicht te krijgen van de belangrijkste informatie die we nodig hebben.
 
-The second phase involves normalising the data. In general, this has been done
-by thoroughly inspecting the unique values for each column and combine values
-that represent similar meaning.
+Daarnaast hebben we meerdere subsets van de relevante data gemaakt, elk met specifieke kolommen die relevant zijn voor bepaalde visualisaties. Dit hielp ons om gericht te werken aan specifieke visualisaties en zorgde ervoor dat de analyse efficiënter verliep.
 
-Finally, we have decided to use parquet `.pq` as the file type for our final
-dataset. This allows us to specify the datatype for each column and decrease the
-overall file size of the final dataset with additional gzip compression. This
-resulted in a 7.2MB parquet file, rather than a 145MB CSV file.
+Een belangrijk onderdeel van de data schoonmaak was het omgaan met missende waarden. We hebben zorgvuldig gekeken naar de relevantie van de rijen met missende waarden. Als een rij belangrijke informatie bevatte die niet genegeerd kon worden, zochten we naar manieren om de missende waarden op te vullen of gebruikten we alternatieve methoden voor de analyse.
 
-After all, a total of 955 columns spanning 9 datasets have been reduced to a
-single dataset containing 19 columns and 535,759 rows.
+Verder hebben we het percentage missende waarden in elke kolom geanalyseerd. Voor kolommen met een hoog percentage missende waarden overwogen we om deze kolommen te verwijderen, vooral als ze niet cruciaal waren. Voor kolommen met een laag percentage missende waarden gebruikten we technieken zoals het invullen van missende waarden met gemiddelde of mediaanwaarden.
 
-## Variable descriptions
+Uiteindelijk zijn alle datasets die worden gebruikt voor de visualisaties van het type CSV. Dit komt deels doordat de meeste datasets die we van het internet hebben gedownload al in CSV-formaat waren. Daarnaast is het CSV-formaat gekozen vanwege de eenvoud en leesbaarheid. Het totaal van 107 kolommen over 5 datasets is gereduceerd naar een totaal van 25 kolommen over 8 datasets.
 
-In terms of variable type and measurement scale, the variables in the final
-dataset can be classified under several combinations:
 
-- Continuous / Ratio variables: `YearsCode`, `YearsCodePro`, `Salary`
-- Discrete / Ordinal variables: `JobSat`
-- Discrete / Nominal variables: `Education`, `OrgSize`, `LastNewJob`,
-  `Employment`, `RespondentType`, `JobSeek`, `Gender`, `Student`, `Country`,
-  `CodingActivities`, `DevType`, `LearnCodeFrom`, `LangPresent`
-- Discrete / Interval variables: `Year`
-- Discrete / Ratio variables: `Age`
+## Variabelen beschrijving
 
-Variables that are currently being used are: `Year`, `Salary`, `YearsCodePro`,
-`Age`, `Education`, `RespondentType`, `Gender`, `Country` and `DevType`.
+De variabelen die gebruikt worden in dit project zijn hieronder overzichtelijk weergeven met de bijbehorende variabeletype en meetniveau.
 
-## Aggregations
+- Continue / Ratio variabelen: `Bioenergy levelized cost of energy`, `Geothermal levelized cost of energy`, `Offshore wind levelized cost of energy`, `Solar photovoltaic levelized cost of energy`, `Concentrated solar power levelized cost of energy`, `Hydropower levelized cost of energy`, `Onshore wind levelized cost of energy`, `Annual CO₂ emissions (per capita)`, `Population`, `CO2`, `CO2 per capita`, `GDP`, `GDP per capita`, `HDI`, `Life expectancy`, `Renewable Energy voor World`, `Annual CO₂ emissions from other industry`, `Annual CO₂ emissions from flaring`, `Annual CO₂ emissions from cement`, `Annual CO₂ emissions from gas`, `Annual CO₂ emissions from oil`, `Annual CO₂ emissions from coal`
 
-In general, most aggregations happen for calculating the salary gap between men
-and women relative to men. This is done by taking the mean salary for both men
-and women, subtracting these means and finally divide the total by the mean
-salary for men. In mathematical notation, this is defined as:
+- Discrete / Nominale variabelen: `Code`, `Country`
 
-$$\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}$$
-
-In most graphs a percentage is being used, which is the above salary gap formula
-multiplied by 100.
-
-**Example:** Let's say in the Netherlands the average annual salary for men is
-&euro;80,000 and for women &euro;60,000. Then the salary gap will be 25% using
-the aforementioned calculation. If women are the ones making &euro;80,000 per
-year and men make &euro;60,000 per year, then the salary gap will be -33%. We
-call the percentage outcome a *male-favoured gap* if the percentage is positive.
-When the outcome is negative, it is considered a *female-favoured gap*.
+- Discrete / Interval variabelen: `Year`

@@ -18,39 +18,33 @@ nav.bd-links {
 }
 
 .toc-entry a.nav-link.active {
-  border-left-color: #36fc82;
+  border-left-color: #006400;
 }
 
-a,
-.prev-next-area a p.prev-next-title,
-.toc-entry a.nav-link:hover,
-.toc-entry a.nav-link.active,
-nav.bd-links .active:hover > a,
-nav.bd-links .active:focus > a,
-nav.bd-links .active > a,
-nav.bd-links li > a:hover,
-nav.bd-links li > a:focus {
-  color: #36fc82; /* Default link color */
+a {
+  color: #006400; /* Default link color */
+  text-decoration: none; /* Remove underline by default */
 }
 
 a:hover {
-  color: #2ebc4f; /* Dark green on hover */
+  color: #004d00; /* Dark green on hover */
+  text-decoration: underline; /* Underline on hover */
 }
 
 a:active {
-  color: #36fc82; /* Same as default link color on active state (when clicked) */
+  color: #006400; /* Same as default link color on active state (when clicked) */
 }
 
 code.literal {
-  background-color: #36fc82;
+  background-color: #006400;
   color: #333a42;
-  border: 1px solid #36fc82;
+  border: 1px solid #006400;
 }
 
 .logo__image {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  border: 1px solid #36fc82;
+  border: 1px solid #006400;
 }
 
 @media (min-width: 992px) {
