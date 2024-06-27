@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Dataset and preprocessing &#8212; Welvaart, Uitstoot &amp; Verduurzaming</title>
+    <title>Datasets en Voorbewerking &#8212; Welvaart, Uitstoot &amp; Verduurzaming</title>
   
   
   
@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="../_static/css/notebook.css?v=24f61db4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/notebook.css?v=8230b88d" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -58,8 +58,6 @@
     <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
-    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/dataset-preprocessing';</script>
     <script src="../_static/js/enforce-light-theme.js?v=9baa896a"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
@@ -181,7 +179,7 @@
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Dataset and preprocessing</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Datasets en Voorbewerking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../notebooks/story.html">Welvaart, uitstoot &amp; verduurzaming</a></li>
 
 
@@ -340,7 +338,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Dataset and preprocessing</h1>
+    <h1>Datasets en Voorbewerking</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -350,9 +348,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schoonmaak">Schoonmaak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabelen-beschrijving">Variabelen beschrijving</a></li>
 </ul>
             </nav>
         </div>
@@ -364,68 +361,25 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="dataset-and-preprocessing">
-<h1>Dataset and preprocessing<a class="headerlink" href="#dataset-and-preprocessing" title="Link to this heading">#</a></h1>
-<p>At first, we decided that each team member has to find at least one dataset of
-interest with sufficient data from which at least two perspectives can be
-induced. During the first team call, every dataset was discussed along with
-possible correlations. In the end, we chose the 2014-2022 datasets from the
-<a class="reference external" href="https://insights.stackoverflow.com/survey">Stack Overflow Annual Developer Survey</a>,
-as these datasets have correlations that could be of use for a potential topic.
-After some brainstorming during team meetings, we decided to dive into the world
-of gender pay gaps, as the dataset contains sufficient variables that can be
-used for two perspectives.</p>
-<section id="cleaning">
-<h2>Cleaning<a class="headerlink" href="#cleaning" title="Link to this heading">#</a></h2>
-<p>Each Stack Overflow dataset contains at least some changes compared to other
-years, such as column renaming or structural changes. We had to go through two
-phases in order to clean everything properly. The first phase is where columns
-are renamed and restructured in order to merge them together. Columns have been
-manually merged by inspecting them one by one and merging the ones containing
-roughly the same name or content in terms of what they represent. Columns that
-were not of use were immediately excluded during this process.</p>
-<p>The second phase involves normalising the data. In general, this has been done
-by thoroughly inspecting the unique values for each column and combine values
-that represent similar meaning.</p>
-<p>Finally, we have decided to use parquet <code class="docutils literal notranslate"><span class="pre">.pq</span></code> as the file type for our final
-dataset. This allows us to specify the datatype for each column and decrease the
-overall file size of the final dataset with additional gzip compression. This
-resulted in a 7.2MB parquet file, rather than a 145MB CSV file.</p>
-<p>After all, a total of 955 columns spanning 9 datasets have been reduced to a
-single dataset containing 19 columns and 535,759 rows.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="datasets-en-voorbewerking">
+<h1>Datasets en Voorbewerking<a class="headerlink" href="#datasets-en-voorbewerking" title="Link to this heading">#</a></h1>
+<p>Bij de start van dit project hebben we het onderwerp geselecteerd om gerichter te kunnen zoeken naar relevante datasets. Na het vaststellen van ons onderwerp hebben we een uitgebreide zoektocht uitgevoerd naar datasets die waardevolle gegevens bevatten voor onze analyse. Tijdens een teamvergadering hebben we deze datasets uitvoerig besproken en onderzocht op mogelijke correlaties tussen de verschillende databronnen. Dit proces hielp ons om het verhaal vanuit twee verschillende perspectieven steeds verder aan te scherpen. Uiteindelijk hebben we besloten om vijf datasets te gebruiken: vier afkomstig van <a class="reference external" href="https://ourworldindata.org/">Our World in Data</a> en één van <a class="reference external" href="https://hdr.undp.org/">Human Developments Reports</a>. Door het combineren van deze data konden we interessante correlaties visualiseren die ondersteunend waren voor beide invalshoeken van ons verhaal. Na diverse overleggen en brainstormsessies hebben we ons verdiept in de relatie tussen de welvaart van landen en trends in CO2-uitstoot, waarbij we specifiek keken naar hoe de variabelen uit onze gekozen datasets beide verhaallijnen konden ondersteunen.</p>
+<section id="schoonmaak">
+<h2>Schoonmaak<a class="headerlink" href="#schoonmaak" title="Link to this heading">#</a></h2>
+<p>In dit project hebben we een grondige data schoonmaak uitgevoerd om ervoor te zorgen dat onze visualisaties betrouwbaar zijn. Allereerst hebben we de relevante kolommen uit de verschillende datasets geselecteerd en deze samengevoegd in een nieuwe dataset. Dit was nodig om een duidelijk overzicht te krijgen van de belangrijkste informatie die we nodig hebben.</p>
+<p>Daarnaast hebben we meerdere subsets van de relevante data gemaakt, elk met specifieke kolommen die relevant zijn voor bepaalde visualisaties. Dit hielp ons om gericht te werken aan specifieke visualisaties en zorgde ervoor dat de analyse efficiënter verliep.</p>
+<p>Een belangrijk onderdeel van de data schoonmaak was het omgaan met missende waarden. We hebben zorgvuldig gekeken naar de relevantie van de rijen met missende waarden. Als een rij belangrijke informatie bevatte die niet genegeerd kon worden, zochten we naar manieren om de missende waarden op te vullen of gebruikten we alternatieve methoden voor de analyse.</p>
+<p>Verder hebben we het percentage missende waarden in elke kolom geanalyseerd. Voor kolommen met een hoog percentage missende waarden overwogen we om deze kolommen te verwijderen, vooral als ze niet cruciaal waren. Voor kolommen met een laag percentage missende waarden gebruikten we technieken zoals het invullen van missende waarden met gemiddelde of mediaanwaarden.</p>
+<p>Uiteindelijk zijn alle datasets die worden gebruikt voor de visualisaties van het type CSV. Dit komt deels doordat de meeste datasets die we van het internet hebben gedownload al in CSV-formaat waren. Daarnaast is het CSV-formaat gekozen vanwege de eenvoud en leesbaarheid. Het totaal van 107 kolommen over 5 datasets is gereduceerd naar een totaal van 25 kolommen over 8 datasets.</p>
 </section>
-<section id="variable-descriptions">
-<h2>Variable descriptions<a class="headerlink" href="#variable-descriptions" title="Link to this heading">#</a></h2>
-<p>In terms of variable type and measurement scale, the variables in the final
-dataset can be classified under several combinations:</p>
+<section id="variabelen-beschrijving">
+<h2>Variabelen beschrijving<a class="headerlink" href="#variabelen-beschrijving" title="Link to this heading">#</a></h2>
+<p>De variabelen die gebruikt worden in dit project zijn hieronder overzichtelijk weergeven met de bijbehorende variabeletype en meetniveau.</p>
 <ul class="simple">
-<li><p>Continuous / Ratio variables: <code class="docutils literal notranslate"><span class="pre">YearsCode</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code></p></li>
-<li><p>Discrete / Ordinal variables: <code class="docutils literal notranslate"><span class="pre">JobSat</span></code></p></li>
-<li><p>Discrete / Nominal variables: <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">OrgSize</span></code>, <code class="docutils literal notranslate"><span class="pre">LastNewJob</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Employment</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">JobSeek</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Student</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code>,
-<code class="docutils literal notranslate"><span class="pre">CodingActivities</span></code>, <code class="docutils literal notranslate"><span class="pre">DevType</span></code>, <code class="docutils literal notranslate"><span class="pre">LearnCodeFrom</span></code>, <code class="docutils literal notranslate"><span class="pre">LangPresent</span></code></p></li>
-<li><p>Discrete / Interval variables: <code class="docutils literal notranslate"><span class="pre">Year</span></code></p></li>
-<li><p>Discrete / Ratio variables: <code class="docutils literal notranslate"><span class="pre">Age</span></code></p></li>
+<li><p>Continue / Ratio variabelen: <code class="docutils literal notranslate"><span class="pre">Bioenergy</span> <span class="pre">levelized</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">Geothermal</span> <span class="pre">levelized</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">Offshore</span> <span class="pre">wind</span> <span class="pre">levelized</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">Solar</span> <span class="pre">photovoltaic</span> <span class="pre">levelized</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">Concentrated</span> <span class="pre">solar</span> <span class="pre">power</span> <span class="pre">levelized</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">Hydropower</span> <span class="pre">levelized</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">Onshore</span> <span class="pre">wind</span> <span class="pre">levelized</span> <span class="pre">cost</span> <span class="pre">of</span> <span class="pre">energy</span></code>, <code class="docutils literal notranslate"><span class="pre">Annual</span> <span class="pre">CO₂</span> <span class="pre">emissions</span> <span class="pre">(per</span> <span class="pre">capita)</span></code>, <code class="docutils literal notranslate"><span class="pre">Population</span></code>, <code class="docutils literal notranslate"><span class="pre">CO2</span></code>, <code class="docutils literal notranslate"><span class="pre">CO2</span> <span class="pre">per</span> <span class="pre">capita</span></code>, <code class="docutils literal notranslate"><span class="pre">GDP</span></code>, <code class="docutils literal notranslate"><span class="pre">GDP</span> <span class="pre">per</span> <span class="pre">capita</span></code>, <code class="docutils literal notranslate"><span class="pre">HDI</span></code>, <code class="docutils literal notranslate"><span class="pre">Life</span> <span class="pre">expectancy</span></code>, <code class="docutils literal notranslate"><span class="pre">Renewable</span> <span class="pre">Energy</span> <span class="pre">voor</span> <span class="pre">World</span></code>, <code class="docutils literal notranslate"><span class="pre">Annual</span> <span class="pre">CO₂</span> <span class="pre">emissions</span> <span class="pre">from</span> <span class="pre">other</span> <span class="pre">industry</span></code>, <code class="docutils literal notranslate"><span class="pre">Annual</span> <span class="pre">CO₂</span> <span class="pre">emissions</span> <span class="pre">from</span> <span class="pre">flaring</span></code>, <code class="docutils literal notranslate"><span class="pre">Annual</span> <span class="pre">CO₂</span> <span class="pre">emissions</span> <span class="pre">from</span> <span class="pre">cement</span></code>, <code class="docutils literal notranslate"><span class="pre">Annual</span> <span class="pre">CO₂</span> <span class="pre">emissions</span> <span class="pre">from</span> <span class="pre">gas</span></code>, <code class="docutils literal notranslate"><span class="pre">Annual</span> <span class="pre">CO₂</span> <span class="pre">emissions</span> <span class="pre">from</span> <span class="pre">oil</span></code>, <code class="docutils literal notranslate"><span class="pre">Annual</span> <span class="pre">CO₂</span> <span class="pre">emissions</span> <span class="pre">from</span> <span class="pre">coal</span></code></p></li>
+<li><p>Discrete / Nominale variabelen: <code class="docutils literal notranslate"><span class="pre">Code</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code></p></li>
+<li><p>Discrete / Interval variabelen: <code class="docutils literal notranslate"><span class="pre">Year</span></code></p></li>
 </ul>
-<p>Variables that are currently being used are: <code class="docutils literal notranslate"><span class="pre">Year</span></code>, <code class="docutils literal notranslate"><span class="pre">Salary</span></code>, <code class="docutils literal notranslate"><span class="pre">YearsCodePro</span></code>,
-<code class="docutils literal notranslate"><span class="pre">Age</span></code>, <code class="docutils literal notranslate"><span class="pre">Education</span></code>, <code class="docutils literal notranslate"><span class="pre">RespondentType</span></code>, <code class="docutils literal notranslate"><span class="pre">Gender</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code> and <code class="docutils literal notranslate"><span class="pre">DevType</span></code>.</p>
-</section>
-<section id="aggregations">
-<h2>Aggregations<a class="headerlink" href="#aggregations" title="Link to this heading">#</a></h2>
-<p>In general, most aggregations happen for calculating the salary gap between men
-and women relative to men. This is done by taking the mean salary for both men
-and women, subtracting these means and finally divide the total by the mean
-salary for men. In mathematical notation, this is defined as:</p>
-<div class="math notranslate nohighlight">
-\[\textrm{SalaryGap} = \frac{S_{\textrm{man}} - S_{\textrm{woman}}}{S_{\textrm{man}}}\]</div>
-<p>In most graphs a percentage is being used, which is the above salary gap formula
-multiplied by 100.</p>
-<p><strong>Example:</strong> Let’s say in the Netherlands the average annual salary for men is
-€80,000 and for women €60,000. Then the salary gap will be 25% using
-the aforementioned calculation. If women are the ones making €80,000 per
-year and men make €60,000 per year, then the salary gap will be -33%. We
-call the percentage outcome a <em>male-favoured gap</em> if the percentage is positive.
-When the outcome is negative, it is considered a <em>female-favoured gap</em>.</p>
 </section>
 </section>
 
@@ -493,9 +447,8 @@ When the outcome is negative, it is considered a <em>female-favoured gap</em>.</
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cleaning">Cleaning</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-descriptions">Variable descriptions</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregations">Aggregations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schoonmaak">Schoonmaak</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabelen-beschrijving">Variabelen beschrijving</a></li>
 </ul>
   </nav></div>
 
