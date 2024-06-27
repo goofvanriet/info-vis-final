@@ -16,7 +16,7 @@ nav.bd-links {
 }
 
 .toc-entry a.nav-link.active {
-  border-left-color: #fcab36;
+  border-left-color: #36fc82;
 }
 
 a,
@@ -30,19 +30,19 @@ nav.bd-links .active:focus > a,
 nav.bd-links .active > a,
 nav.bd-links li > a:hover,
 nav.bd-links li > a:focus {
-  color: #fcab36;
+  color: #36fc82;
 }
 
 code.literal {
-  background-color: #fdebd3;
+  background-color: #36fc82;
   color: #333a42;
-  border: 1px solid #d8bea1;
+  border: 1px solid #36fc82;
 }
 
 .logo__image {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  border: 1px solid #d8bea1;
+  border: 1px solid #36fc82;
 }
 
 @media (min-width: 992px) {

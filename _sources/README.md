@@ -1,12 +1,10 @@
-![gender pay gap banner](./static/images/banner.png?)
+![](./static/images/banner.png?)
 
-[Click here to view the data story](https://p-adema.github.io/info-vis/)
+[Click here to view the data story]()
 
-# Information Visualisation: Gender Pay Gap
+# Information Visualisation: Welvaart, Uitstoot en Duurzaamheid
 
-Jupyter Book visualising the gender pay gap for software developers,
-using the Stack Overflow Annual Developer Survey data. For more details
-regarding the datasets source and the cleaning process, see the
+Jupyter Book die verschillende correlaties mbt uitstoot welvaart en duurzaamheid.
 [Dataset and preprocessing](./docs/dataset-preprocessing.md) page.
 
 # Table of Contents
@@ -23,8 +21,8 @@ regarding the datasets source and the cleaning process, see the
 # Getting started
 
 ```
-git clone git@github.com:p-adema/info-vis.git
-cd info-vis
+git clone git@github.com:goofvanriet/info-vis-final.git
+cd info-vis-final
 pip3 install -r requirements.txt
 ```
 
@@ -74,8 +72,8 @@ metadata to the `story.ipynb` in order to hide the input cells.
 Click [here](./scripts/cleaning/) to have a look at the scripts that have been
 used to clean the datasets prior to the data story development phase.
 
-# Authors
-- Peter Adema
-- Aize van Basten Batenburg
-- Wim Berkelmans
-- Kim Koomen
+# Auteurs
+- Anou Prins: 13427644
+- Efehan Kuznek: 14012847
+- Tom Kuin: 13186280
+- Goof van Riet: 14715988
