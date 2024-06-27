@@ -1,3 +1,5 @@
+/* Updated CSS with hover and active styles */
+
 .theme-switch-button {
   display: none !important;
 }
@@ -20,8 +22,6 @@ nav.bd-links {
 }
 
 a,
-a:hover,
-a:focus,
 .prev-next-area a p.prev-next-title,
 .toc-entry a.nav-link:hover,
 .toc-entry a.nav-link.active,
@@ -30,7 +30,15 @@ nav.bd-links .active:focus > a,
 nav.bd-links .active > a,
 nav.bd-links li > a:hover,
 nav.bd-links li > a:focus {
-  color: #36fc82;
+  color: #36fc82; /* Default link color */
+}
+
+a:hover {
+  color: #2ebc4f; /* Dark green on hover */
+}
+
+a:active {
+  color: #36fc82; /* Same as default link color on active state (when clicked) */
 }
 
 code.literal {
