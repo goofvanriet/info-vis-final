@@ -18,7 +18,7 @@ nav.bd-links {
 }
 
 .toc-entry a.nav-link.active {
-  border-left-color: #006400;
+  border-left-color: #006633;
 }
 
 a,
@@ -30,19 +30,19 @@ nav.bd-links .active:focus > a,
 nav.bd-links .active > a,
 nav.bd-links li > a:hover,
 nav.bd-links li > a:focus {
-  color: #006400; /* Default link color */
+  color: #006633; /* Default link color */
 }
 
 a:hover {
-  color: #2ebc4f; /* Dark green on hover */
+  color: #004d00; /* Dark green on hover */
 }
 
 a:active {
-  color: #006400; /* Same as default link color on active state (when clicked) */
+  color: #006633; /* Same as default link color on active state (when clicked) */
 }
 
 a {
-  color: #006400; /* Default link color */
+  color: #006633; /* Default link color */
   text-decoration: none; /* Remove underline by default */
 }
 
@@ -52,19 +52,19 @@ a:hover {
 }
 
 a:active {
-  color: #006400; /* Same as default link color on active state (when clicked) */
+  color: #006633; /* Same as default link color on active state (when clicked) */
 }
 
 code.literal {
-  background-color: #006400;
+  background-color: #006633;
   color: #333a42;
-  border: 1px solid #006400;
+  border: 1px solid #006633;
 }
 
 .logo__image {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
-  border: 1px solid #006400;
+  border: 1px solid #006633;
 }
 
 @media (min-width: 992px) {
