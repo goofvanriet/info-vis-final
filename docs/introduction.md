@@ -1,21 +1,20 @@
-# Introduction
+<!-- #region -->
+# Inleiding
 
-For more than two centuries, women have been fighting for equal rights and equal treatment. It has become more and more a political issue.
-In many Western societies, equal rights for men and women are laid down in law.
-This does not mean that men and women are treated equally, but in many countries gender discrimination is against the law.
-One of the notorious differences between men and women is their salaries, how much they get paid for the same amount and quality of work.
+Terwijl economische groei lange tijd werd gezien als een manier om de wereldwijde levensstandaarden te verbeteren, roept deze ontwikkeling de laatste decennia vragen op over de duurzaamheid hiervan.
+Alhoewel  er nieuwe wet- en regelgeving is ingevoerd die gericht is op het verminderen van wereldwijde CO2-emissies, blijft de klimaatverandering een onopgelost probleem.
+De wetenschappelijke consensus is vooralsnog dat de mens een sleutelrol speelt in de opwarming van de aarde ten gevolge van het broeikaseffect (Lynas et al., 2021). Aangezien CO2 het broeikasgas is dat op waterdamp en wolken na de grootste bijdrager is aan het broeikaseffect (Schmidt et al., 2010), hebben wij besloten te kijken naar de relatie tussen de HDI, een maatstaf voor de welvaart van een land, en de CO2 emissie om mogelijke correlaties te onderzoeken.
 
-This data story will explore salaries of software developers based on data from Stack Overflow, an online community of software developers.
-Stack Overflow runs a yearly survey, asking its members questions about their age, skills, work and interests.
-Data from these surveys are made publicly available by Stack Overflow and can be used to analyse the working conditions for these developers.
+Om ons onderwerp in te leiden en de stand van zaken van CO2-emissies te visualiseren, zien we in onderstaand figuur de verdeling van CO2-emissies per bron weergegeven. Opvallend is dat kolen, olie en gas, bekend om hun aanzienlijke milieueffecten, nog steeds verantwoordelijk zijn voor de grootste hoeveelheid CO2-uitstoot.
+![](../static/images/pie_chart.png)
 
-In particular, we will explore the correlation between yearly salary and features like age, country and job position.
 
 [Click here to read the data story](../notebooks/story.ipynb)
 
-**Authors**
+**Auteurs**
 
-- Peter Adema
-- Aize van Basten Batenburg
-- Wim Berkelmans
-- Kim Koomen
+- Anou Prins
+- Tom Kuin
+- Efehan Kuznek
+- Goof van Riet
+<!-- #endregion -->
