@@ -21,6 +21,26 @@ nav.bd-links {
   border-left-color: #006400;
 }
 
+a,
+.prev-next-area a p.prev-next-title,
+.toc-entry a.nav-link:hover,
+.toc-entry a.nav-link.active,
+nav.bd-links .active:hover > a,
+nav.bd-links .active:focus > a,
+nav.bd-links .active > a,
+nav.bd-links li > a:hover,
+nav.bd-links li > a:focus {
+  color: #006400; /* Default link color */
+}
+
+a:hover {
+  color: #2ebc4f; /* Dark green on hover */
+}
+
+a:active {
+  color: #006400; /* Same as default link color on active state (when clicked) */
+}
+
 a {
   color: #006400; /* Default link color */
   text-decoration: none; /* Remove underline by default */
