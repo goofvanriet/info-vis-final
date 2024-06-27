@@ -1,21 +1,9 @@
 # Work distribution
 
-Our method of communication during this project consisted of seminars
-(werkcolleges), meetings, and additional consultation over text. In our first
-meeting, each team member presented a dataset along with at least two different
-perspectives. We then chose the subject and data that best suited the
-requirements for the project. Our first step after determining the subject was
-to clean and merge the datasets from each year to form one singular dataset, for
-more information, see [Dataset and preprocessing](dataset-preprocessing.md).
-We also started to discuss possible graphs that could be made to support the
-different perspectives. We then started making the graphs and work on a story
-that builds a narrative around them, which led to the our draft version.
-Furthermore, the remaining time has been used to further improve the graphs as
-well as the story. Finally, with the help of the given peer feedback, we created
-the final data story.
+Onze communicatie vond volledig vanuit huis plaats via Zoom en eventuele tekstberichten. Het doel van de eerste bijeenkomst was om ideeen te presenteren en te brainstormen over de werkbaarheid van deze ideeën voor het project, zodat we ons onderwerp te kiezen. Na het kiezen van het onderwerp hebben we de eerste datasets gevonden over HDI en CO2-uitstoot en gezocht naar interessante variabelen die geschikt waren voor ons onderzoek. Deze datasets hebben we allereerst opgeschoond (meer informatie is te vinden bij [Dataset & Preprocessing](https://goofvanriet.github.io/infovis/notebooks/dataset-preprocessing.md)), zodat we konden starten met visualiseren. We hebben hierna interessante visualisaties bedacht en uitgevoerd voor de draft. Na de eerste draft en peer review realiseerden we ons dat het nodig was om een sterkere verhaallijn te creëren. De tijd daarna hebben we besteed aan het herstructureren van het verhaal en het toevoegen van nieuwe argumenten, visualisaties en datasets om het verhaal te versterken.
 
 
-## Kim
+## Anou
 
 Kim took the responsibility of coordinating the project. He cleaned the subsets
 2014-2016 and merged those with the 2017-2022 subsets (cleaned by Peter) into a
@@ -24,20 +12,19 @@ their associated captions, as well as coming up with the overal design. He was
 also responsible for taking notes during meetings and made a clear overview of
 everyone's responsibilities.
 
-## Peter
+## Efehan
 
 Peter first worked on cleaning the survey years 2017-2022. He then participated
 in making the graphs. Later on in the project, he helped improve the storyline
 together with Wim. Peter also presented the project for peer feedback.
 
-## Wim
+## Tom
 
 Wim participated in improving the graphs and was mainly responsible for creating
 a strong basis of the storyline. Furthermore, he looked into several research
 papers that support the perspectives and continued to assist on the storyline
 during the project.
 
-## Aize
+## Goof
 
-Aize contributed to the development of the graphs and presented the project
-during peer feedback. The work distribution was also written by Aize.
+Goof first worked on cleaning the HDI dataset. He then participated in creating visualizations showing the trends for CO2 and CO2 caused by fossil fuels. Additionally he coordinated the github repository and deployment of the Jupyter Book. Furthermore he continued to assist the storyline and explored relevant research papers.
