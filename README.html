@@ -35,7 +35,7 @@
     <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=87e54e7c" />
-    <link rel="stylesheet" type="text/css" href="_static/css/notebook.css?v=15d0b3ef" />
+    <link rel="stylesheet" type="text/css" href="_static/css/notebook.css?v=3df26a63" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=3ee479438cf8b5e0d341" />
@@ -349,12 +349,11 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Information Visualisation: Welvaart, Uitstoot en Duurzaamheid</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inhoudsopgave">Inhoudsopgave</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aan-de-slag">Aan de slag</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#structuur">Structuur</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gebruik">Gebruik</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-cleaning-scripts">Dataset cleaning scripts</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#auteurs">Auteurs</a></li>
 </ul>
 
@@ -375,71 +374,59 @@ document.write(`
 <p>Jupyter Book die verschillende correlaties mbt uitstoot welvaart en duurzaamheid.
 <a class="reference internal" href="docs/dataset-preprocessing.html"><span class="std std-doc">Dataset and preprocessing</span></a> page.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="table-of-contents">
-<h1>Table of Contents<a class="headerlink" href="#table-of-contents" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="inhoudsopgave">
+<h1>Inhoudsopgave<a class="headerlink" href="#inhoudsopgave" title="Link to this heading">#</a></h1>
 <ul class="simple">
-<li><p><a class="reference internal" href="#information-visualisation-gender-pay-gap"><span class="xref myst">Information Visualisation: Gender Pay Gap</span></a></p></li>
-<li><p><a class="reference internal" href="#table-of-contents"><span class="xref myst">Table of Contents</span></a></p></li>
-<li><p><a class="reference internal" href="#getting-started"><span class="xref myst">Getting started</span></a></p></li>
-<li><p><a class="reference internal" href="#structure"><span class="xref myst">Structure</span></a></p></li>
-<li><p><a class="reference internal" href="#usage"><span class="xref myst">Usage</span></a></p></li>
-<li><p><a class="reference internal" href="#deploy"><span class="xref myst">Deploy</span></a></p></li>
-<li><p><a class="reference internal" href="#dataset-cleaning-scripts"><span class="xref myst">Dataset cleaning scripts</span></a></p></li>
-<li><p><a class="reference internal" href="#authors"><span class="xref myst">Authors</span></a></p></li>
+<li><p><a class="reference internal" href="#information-visualisation-welvaart,-uitstoot-en-duurzaamheid"><span class="xref myst">Information Visualisation: Welvaart, Uitstoot &amp; Verduurzaming</span></a></p></li>
+<li><p><a class="reference internal" href="#inhoudsopgave"><span class="xref myst">Inhoudsopgave</span></a></p></li>
+<li><p><a class="reference internal" href="#aan-de-slag"><span class="xref myst">Aan de slag</span></a></p></li>
+<li><p><a class="reference internal" href="#structuur"><span class="xref myst">Structuur</span></a></p></li>
+<li><p><a class="reference internal" href="#gebruik"><span class="xref myst">Gebruik</span></a></p></li>
+<li><p><a class="reference internal" href="#implementeren"><span class="xref myst">Implementeren</span></a></p></li>
+<li><p><a class="reference internal" href="#dataset-schoonmaakscripts"><span class="xref myst">Dataset schoonmaakscripts</span></a></p></li>
+<li><p><a class="reference internal" href="#auteurs"><span class="xref myst">Auteurs</span></a></p></li>
 </ul>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="getting-started">
-<h1>Getting started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="aan-de-slag">
+<h1>Aan de slag<a class="headerlink" href="#aan-de-slag" title="Link to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">git</span><span class="nd">@github</span><span class="o">.</span><span class="n">com</span><span class="p">:</span><span class="n">goofvanriet</span><span class="o">/</span><span class="n">info</span><span class="o">-</span><span class="n">vis</span><span class="o">-</span><span class="n">final</span><span class="o">.</span><span class="n">git</span>
 <span class="n">cd</span> <span class="n">info</span><span class="o">-</span><span class="n">vis</span><span class="o">-</span><span class="n">final</span>
 <span class="n">pip3</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
 </pre></div>
 </div>
-<p>Additionally, install <code class="docutils literal notranslate"><span class="pre">conda</span></code> to setup a local environment.</p>
+<p>Installeer daarnaast <code class="docutils literal notranslate"><span class="pre">conda</span></code> om een lokale omgeving op te zetten.</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/macos.html">MacOS installation instructions</a></p></li>
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/windows.html">Windows installation instructions</a></p></li>
 <li><p><a class="reference external" href="https://docs.conda.io/projects/conda/en/latest/user-guide/install/linux.html">Linux installation instructions</a></p></li>
 </ul>
-<p>In case you don’t have <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> installed locally, simply run <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">jupyter</span></code>.</p>
+<p>Mocht je <code class="docutils literal notranslate"><span class="pre">jupyter</span></code> niet lokaal geïnstalleerd hebben, voer dan eenvoudigweg <code class="docutils literal notranslate"><span class="pre">pip3</span> <span class="pre">install</span> <span class="pre">jupyter</span></code> uit.</p>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="structure">
-<h1>Structure<a class="headerlink" href="#structure" title="Link to this heading">#</a></h1>
+<section class="tex2jax_ignore mathjax_ignore" id="structuur">
+<h1>Structuur<a class="headerlink" href="#structuur" title="Link to this heading">#</a></h1>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.
-├── LICENSE             # Code license
-├── README.md           # General project information and instructions
-├── _build              # Jupyter build that will be deployed
-├── _config.yml         # Jupyter config file
-├── _toc.yml            # Jupyter Table of Contents config file
-├── data                # Contains dataset including cleaning scripts
-├── docs                # Files to be published on GitHub Pages
-├── notebooks           # Contains all notebook graphs used for the data story
-├── requirements.txt    # Project dependencies
-├── scripts             # Additional scripts used for deployment or cleaning
-└── static              # Images, css and js files to be published on GitHub Pages
+├── LICENSE # Code licentie
+├── README.md # Algemene projectinformatie en instructies
+├── _build # Jupyter build die geïmplementeerd zal worden
+├── _config.yml # Jupyter configuratiebestand
+├── _toc.yml # Jupyter Inhoudsopgave configuratiebestand
+├── data # Bevat dataset inclusief schoonmaakscripts
+├── docs # Bestanden die gepubliceerd worden op GitHub Pages
+├── notebooks # Bevat alle notebook grafieken die gebruikt worden voor de data story
+├── requirements.txt # Projectafhankelijkheden
+├── scripts # Aanvullende scripts gebruikt voor implementatie of schoonmaak
+└── static # Afbeeldingen, css en js bestanden die gepubliceerd worden op GitHub Pages
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="usage">
-<h1>Usage<a class="headerlink" href="#usage" title="Link to this heading">#</a></h1>
-<p>Run <code class="docutils literal notranslate"><span class="pre">jupyter</span> <span class="pre">notebook</span></code> inside the root of this repository. All notebooks that go
-into the data story should be created inside the <code class="docutils literal notranslate"><span class="pre">notebooks</span></code> directory. In order
-to keep a maintainable and flexible structure, create one notebook per plot.</p>
-<p>The main data story notebook is <code class="docutils literal notranslate"><span class="pre">./notebooks/story.ipynb</span></code>. In between texts, you
-can include the results from other plots, simply by adding a new code cell with
-the following contents <code class="docutils literal notranslate"><span class="pre">%run</span> <span class="pre">example_plot.ipynb</span></code>. Only the result of the last
-cell inside <code class="docutils literal notranslate"><span class="pre">example_plot.ipynb</span></code> will be rendered.</p>
+<section class="tex2jax_ignore mathjax_ignore" id="gebruik">
+<h1>Gebruik<a class="headerlink" href="#gebruik" title="Link to this heading">#</a></h1>
+<p>Voer ‘jupyter notebook’ uit in de hoofdmap van deze repository. Alle notebooks die bijdragen aan het verhaal moeten worden aangemaakt binnen de ‘notebooks’ directory. Om een onderhoudsarme en flexibele structuur te behouden, maak één notebook per grafiek.</p>
+<p>Het hoofdnotebook voor het verhaal is ‘./notebooks/story.ipynb’. Tussen de teksten kun je de resultaten van andere grafieken opnemen door simpelweg een nieuwe code-cel toe te voegen met de volgende inhoud ‘%run example_plot.ipynb’. Alleen het resultaat van de laatste cel binnen ‘example_plot.ipynb’ zal worden weergegeven.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="deploy">
 <h1>Deploy<a class="headerlink" href="#deploy" title="Link to this heading">#</a></h1>
-<p>In order to deploy to GitHub pages, you can run the following command in a
-terminal: <code class="docutils literal notranslate"><span class="pre">./scripts/deploy.sh</span></code>. This will build the project, notebooks and adds
-metadata to the <code class="docutils literal notranslate"><span class="pre">story.ipynb</span></code> in order to hide the input cells.</p>
-</section>
-<section class="tex2jax_ignore mathjax_ignore" id="dataset-cleaning-scripts">
-<h1>Dataset cleaning scripts<a class="headerlink" href="#dataset-cleaning-scripts" title="Link to this heading">#</a></h1>
-<p>Click <a class="reference internal" href="#./scripts/cleaning/"><span class="xref myst">here</span></a> to have a look at the scripts that have been
-used to clean the datasets prior to the data story development phase.</p>
+<p>Om naar GitHub Pages te implementeren, kunt u het volgende commando uitvoeren in een terminal: ‘./scripts/deploy.sh.’ Hiermee wordt het project gebouwd, worden de notebooks toegevoegd en wordt metadata toegevoegd aan ‘story.ipynb’ om de invoercellen te verbergen.</p>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="auteurs">
 <h1>Auteurs<a class="headerlink" href="#auteurs" title="Link to this heading">#</a></h1>
@@ -498,12 +485,11 @@ used to clean the datasets prior to the data story development phase.</p>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">Information Visualisation: Welvaart, Uitstoot en Duurzaamheid</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#table-of-contents">Table of Contents</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#getting-started">Getting started</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#structure">Structure</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#usage">Usage</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#inhoudsopgave">Inhoudsopgave</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#aan-de-slag">Aan de slag</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#structuur">Structuur</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#gebruik">Gebruik</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#deploy">Deploy</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#dataset-cleaning-scripts">Dataset cleaning scripts</a></li>
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#auteurs">Auteurs</a></li>
 </ul>
 
