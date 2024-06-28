@@ -14,4 +14,4 @@ Deze feedback hebben wij teruggekoppeld aan alle leden van de groep, kort overle
 
 ## Self-reflection
 
-Achteraf gezien hadden wij er als groep meer baat bij gehad om een duidelijk verhaal te formuleren als basis en aan de hand daarvan aan de slag te gaan met de visualisaties. Aangezien wij in eerste instantie vooral de prioriteit bij de visualisaties hebben gelegd, ontbrak de benodigde structuur.
+Achteraf gezien hadden wij er als groep meer baat bij gehad om een duidelijk verhaal te formuleren als basis en aan de hand daarvan aan de slag te gaan met de visualisaties. Aangezien wij in eerste instantie vooral de prioriteit bij de visualisaties hebben gelegd, ontbrak de benodigde structuur. Ook hadden wij eerder in het project feedback van onze TA kunnen vragen waardoor we in een eerder stadium van het project de gebrek aan structuur hadden kunnen vaststellen.
