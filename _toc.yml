@@ -8,3 +8,4 @@ chapters:
   - file: notebooks/story.ipynb
   - file: docs/reflection.md
   - file: docs/work-distribution.md
+  - file: docs/references.md
