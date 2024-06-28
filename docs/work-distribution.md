@@ -9,11 +9,11 @@ Onze communicatie vond volledig vanuit huis plaats via Zoom en eventuele tekstbe
 
 ## Efehan
 
-
+Efehan heeft gewerkt aan een wereldkaart waarin de CO2-emissies per capita te zien zijn door de jaren heen. Deze kaart weergeeft de historische achtergrond van het onderzoek en laat tegelijkertijd precies zien waar de problemen op dit moment liggen. Verder is hij bezig geweest met de data-schoonmaak en het opstellen van het bijbehorende hoofdstuk in de Jupyter Book.
 
 ## Tom
 
-
+In het begin werkte Tom aan het schoonmaken van meerdere datasets waardoor er één relevante dataset voor het eerste perspectief kon worden samengesteld zodat er gemakkelijker met de data gewerkt zou kunnen worden. Verder hield die zich bezig met het de visualisaties van de correlatie tussen CO2 en HDI.
 
 ## Goof
 
