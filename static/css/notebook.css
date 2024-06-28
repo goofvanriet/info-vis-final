@@ -1,27 +1,6 @@
-/* Updated CSS with hover and active styles */
-
-.theme-switch-button {
-  display: none !important;
-}
-
-.bd-sidebar-primary .sidebar-primary-items__end {
-  margin-top: 0;
-}
-
-.bd-article-container h1,
-.bd-article-container h2 {
-  color: #343a42;
-}
-
-nav.bd-links {
-  margin-right: 0;
-}
-
-.toc-entry a.nav-link.active {
-  border-left-color: #006633;
-}
-
+/* Ensure all links are colored #006633 */
 a,
+a:visited,
 .prev-next-area a p.prev-next-title,
 .toc-entry a.nav-link:hover,
 .toc-entry a.nav-link.active,
@@ -35,19 +14,6 @@ nav.bd-links li > a:focus {
 
 a:hover {
   color: #004d00; /* Dark green on hover */
-}
-
-a:active {
-  color: #006633; /* Same as default link color on active state (when clicked) */
-}
-
-a {
-  color: #006633; /* Default link color */
-  text-decoration: none; /* Remove underline by default */
-}
-
-a:hover {
-  color: #004d00; /* Dark green on hover */
   text-decoration: underline; /* Underline on hover */
 }
 
@@ -56,7 +22,7 @@ a:active {
 }
 
 code.literal {
-  background-color: #006633;
+  background-color: #ADFFAD;
   color: #333a42;
   border: 1px solid #006633;
 }
@@ -76,4 +42,11 @@ code.literal {
   .bd-sidebar-secondary .sidebar-secondary-items {
     height: 100%;
   }
+}
+
+/* Add a custom background color for specific section */
+.custom-bg-color {
+  background-color: #ADFFAD; /* Change this to the desired background color */
+  padding: 10px;
+  border-radius: 5px;
 }
