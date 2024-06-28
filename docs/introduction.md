@@ -8,7 +8,7 @@ De wetenschappelijke consensus is vooralsnog dat de mens een sleutelrol speelt i
 Om ons onderwerp in te leiden en de stand van zaken van CO2-emissies te visualiseren, zien we in onderstaand figuur de verdeling van CO2-emissies per bron weergegeven. Opvallend is dat kolen, olie en gas, bekend om hun aanzienlijke milieueffecten, nog steeds verantwoordelijk zijn voor de grootste hoeveelheid CO2-uitstoot.
 
 
-![](../static/images/pie_chart.png)
+![](../static/images/co2_sources.png)
 
 
 [Click here to read the data story](../notebooks/story.ipynb)
