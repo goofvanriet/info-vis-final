@@ -1,5 +1,5 @@
 <!-- #region -->
-# Welvaart, Uitstoot & Verduurzaming
+<big>Welvaart, Uitstoot & Verduurzaming</big>
 
 
 ## Inleiding
