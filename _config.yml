@@ -6,7 +6,7 @@ author: InfoVis Group L2
 copyright: "2024"
 logo: static/images/logo.jpg
 html:
-  favicon: static/images/favicon.ico
+  favicon: static/images/favicon.png
   use_repository_button: true
 
 # Force re-execution of notebooks on each build.
