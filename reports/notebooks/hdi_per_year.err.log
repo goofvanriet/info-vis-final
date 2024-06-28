@@ -1,0 +1,221 @@
+Traceback (most recent call last):
+  File "/home/goof/anaconda3/lib/python3.11/site-packages/jupyter_cache/executors/utils.py", line 58, in single_nb_execution
+    executenb(
+  File "/home/goof/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1305, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goof/anaconda3/lib/python3.11/site-packages/jupyter_core/utils/__init__.py", line 173, in wrapped
+    return loop.run_until_complete(inner)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/goof/anaconda3/lib/python3.11/asyncio/base_events.py", line 653, in run_until_complete
+    return future.result()
+           ^^^^^^^^^^^^^^^
+  File "/home/goof/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 705, in async_execute
+    await self.async_execute_cell(
+  File "/home/goof/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 1058, in async_execute_cell
+    await self._check_raise_for_error(cell, cell_index, exec_reply)
+  File "/home/goof/anaconda3/lib/python3.11/site-packages/nbclient/client.py", line 914, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply_content)
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go
+
+# Assume df_hdiy is already defined and contains the necessary data
+
+years = list(range(1990, 2023))
+hdi_columns = [f'hdi_{year}' for year in years]
+df_hdiyn = df_hdiy[['country'] + hdi_columns]
+
+# Melt the DataFrame to long format for easier plotting
+df_melted = df_hdiyn.melt(id_vars=['country'], var_name='year', value_name='hdi')
+
+# Convert year to numeric
+df_melted['year'] = df_melted['year'].str.extract('(\d+)').astype(int)
+
+# Define bins and labels for HDI categories
+bins = [0, 0.55, 0.69, 1.0]
+labels = ['Laag (< 0.55)', 'Midden (0.55 - 0.69)', 'Hoog (0.69 <)']
+
+# Bin the HDI values
+df_melted['category'] = pd.cut(df_melted['hdi'], bins=bins, labels=labels, include_lowest=True)
+
+# Group by year and category
+df_grouped = df_melted.groupby(['year', 'category'], observed=True).size().unstack(fill_value=0).reset_index()
+
+# Define colors for the categories
+colors = {
+    'Laag (< 0.55)': 'viridis_2',
+    'Midden (0.55 - 0.69)': 'orange',
+    'Hoog (0.69 <)': 'green'
+}
+
+# Create the plot
+fig = go.Figure()
+
+# Add traces for each category with specified colors
+for category in labels:
+    fig.add_trace(go.Bar(
+        x=df_grouped['year'],
+        y=df_grouped[category],
+        name=category,
+        marker_color=colors[category]
+    ))
+
+# Update layout
+fig.update_layout(
+    barmode='stack',
+    title='Aantal landen per HDI Categorie (1990 - 2022)',
+    xaxis=dict(title='Jaartal'),
+    yaxis=dict(title='Aantal landen'),
+    legend=dict(title='HDI Categorie', x=1.05, y=1),
+    font=dict(size=18),
+    autosize=False
+)
+
+fig.show()
+
+------------------
+
+
+[0;31m---------------------------------------------------------------------------[0m
+[0;31mValueError[0m                                Traceback (most recent call last)
+Cell [0;32mIn[2], line 39[0m
+[1;32m     37[0m [38;5;66;03m# Add traces for each category with specified colors[39;00m
+[1;32m     38[0m [38;5;28;01mfor[39;00m category [38;5;129;01min[39;00m labels:
+[0;32m---> 39[0m     fig[38;5;241m.[39madd_trace(go[38;5;241m.[39mBar(
+[1;32m     40[0m         x[38;5;241m=[39mdf_grouped[[38;5;124m'[39m[38;5;124myear[39m[38;5;124m'[39m],
+[1;32m     41[0m         y[38;5;241m=[39mdf_grouped[category],
+[1;32m     42[0m         name[38;5;241m=[39mcategory,
+[1;32m     43[0m         marker_color[38;5;241m=[39mcolors[category]
+[1;32m     44[0m     ))
+[1;32m     46[0m [38;5;66;03m# Update layout[39;00m
+[1;32m     47[0m fig[38;5;241m.[39mupdate_layout(
+[1;32m     48[0m     barmode[38;5;241m=[39m[38;5;124m'[39m[38;5;124mstack[39m[38;5;124m'[39m,
+[1;32m     49[0m     title[38;5;241m=[39m[38;5;124m'[39m[38;5;124mAantal landen per HDI Categorie (1990 - 2022)[39m[38;5;124m'[39m,
+[0;32m   (...)[0m
+[1;32m     54[0m     autosize[38;5;241m=[39m[38;5;28;01mFalse[39;00m
+[1;32m     55[0m )
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/plotly/graph_objs/_bar.py:3435[0m, in [0;36mBar.__init__[0;34m(self, arg, alignmentgroup, base, basesrc, cliponaxis, constraintext, customdata, customdatasrc, dx, dy, error_x, error_y, hoverinfo, hoverinfosrc, hoverlabel, hovertemplate, hovertemplatesrc, hovertext, hovertextsrc, ids, idssrc, insidetextanchor, insidetextfont, legend, legendgroup, legendgrouptitle, legendrank, legendwidth, marker, meta, metasrc, name, offset, offsetgroup, offsetsrc, opacity, orientation, outsidetextfont, selected, selectedpoints, showlegend, stream, text, textangle, textfont, textposition, textpositionsrc, textsrc, texttemplate, texttemplatesrc, uid, uirevision, unselected, visible, width, widthsrc, x, x0, xaxis, xcalendar, xhoverformat, xperiod, xperiod0, xperiodalignment, xsrc, y, y0, yaxis, ycalendar, yhoverformat, yperiod, yperiod0, yperiodalignment, ysrc, zorder, **kwargs)[0m
+[1;32m   3431[0m arg[38;5;241m.[39mpop([38;5;124m"[39m[38;5;124mtype[39m[38;5;124m"[39m, [38;5;28;01mNone[39;00m)
+[1;32m   3433[0m [38;5;66;03m# Process unknown kwargs[39;00m
+[1;32m   3434[0m [38;5;66;03m# ----------------------[39;00m
+[0;32m-> 3435[0m [38;5;28mself[39m[38;5;241m.[39m_process_kwargs([38;5;241m*[39m[38;5;241m*[39m[38;5;28mdict[39m(arg, [38;5;241m*[39m[38;5;241m*[39mkwargs))
+[1;32m   3437[0m [38;5;66;03m# Reset skip_invalid[39;00m
+[1;32m   3438[0m [38;5;66;03m# ------------------[39;00m
+[1;32m   3439[0m [38;5;28mself[39m[38;5;241m.[39m_skip_invalid [38;5;241m=[39m [38;5;28;01mFalse[39;00m
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/plotly/basedatatypes.py:4387[0m, in [0;36mBasePlotlyType._process_kwargs[0;34m(self, **kwargs)[0m
+[1;32m   4384[0m err [38;5;241m=[39m _check_path_in_prop_tree([38;5;28mself[39m, k, error_cast[38;5;241m=[39m[38;5;167;01mValueError[39;00m)
+[1;32m   4385[0m [38;5;28;01mif[39;00m err [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   4386[0m     [38;5;66;03m# e.g. underscore kwargs like marker_line_color[39;00m
+[0;32m-> 4387[0m     [38;5;28mself[39m[k] [38;5;241m=[39m v
+[1;32m   4388[0m [38;5;28;01melif[39;00m [38;5;129;01mnot[39;00m [38;5;28mself[39m[38;5;241m.[39m_validate:
+[1;32m   4389[0m     [38;5;66;03m# Set extra property as-is[39;00m
+[1;32m   4390[0m     [38;5;28mself[39m[k] [38;5;241m=[39m v
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/plotly/basedatatypes.py:4914[0m, in [0;36mBasePlotlyType.__setitem__[0;34m(self, prop, value)[0m
+[1;32m   4910[0m     res [38;5;241m=[39m res[p]
+[1;32m   4912[0m res[38;5;241m.[39m_validate [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_validate
+[0;32m-> 4914[0m res[prop[[38;5;241m-[39m[38;5;241m1[39m]] [38;5;241m=[39m value
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/plotly/basedatatypes.py:4874[0m, in [0;36mBasePlotlyType.__setitem__[0;34m(self, prop, value)[0m
+[1;32m   4870[0m         [38;5;28mself[39m[38;5;241m.[39m_set_array_prop(prop, value)
+[1;32m   4872[0m     [38;5;66;03m# ### Handle simple property ###[39;00m
+[1;32m   4873[0m     [38;5;28;01melse[39;00m:
+[0;32m-> 4874[0m         [38;5;28mself[39m[38;5;241m.[39m_set_prop(prop, value)
+[1;32m   4875[0m [38;5;28;01melse[39;00m:
+[1;32m   4876[0m     [38;5;66;03m# Make sure properties dict is initialized[39;00m
+[1;32m   4877[0m     [38;5;28mself[39m[38;5;241m.[39m_init_props()
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/plotly/basedatatypes.py:5218[0m, in [0;36mBasePlotlyType._set_prop[0;34m(self, prop, val)[0m
+[1;32m   5216[0m         [38;5;28;01mreturn[39;00m
+[1;32m   5217[0m     [38;5;28;01melse[39;00m:
+[0;32m-> 5218[0m         [38;5;28;01mraise[39;00m err
+[1;32m   5220[0m [38;5;66;03m# val is None[39;00m
+[1;32m   5221[0m [38;5;66;03m# -----------[39;00m
+[1;32m   5222[0m [38;5;28;01mif[39;00m val [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m:
+[1;32m   5223[0m     [38;5;66;03m# Check if we should send null update[39;00m
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/plotly/basedatatypes.py:5213[0m, in [0;36mBasePlotlyType._set_prop[0;34m(self, prop, val)[0m
+[1;32m   5210[0m validator [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39m_get_validator(prop)
+[1;32m   5212[0m [38;5;28;01mtry[39;00m:
+[0;32m-> 5213[0m     val [38;5;241m=[39m validator[38;5;241m.[39mvalidate_coerce(val)
+[1;32m   5214[0m [38;5;28;01mexcept[39;00m [38;5;167;01mValueError[39;00m [38;5;28;01mas[39;00m err:
+[1;32m   5215[0m     [38;5;28;01mif[39;00m [38;5;28mself[39m[38;5;241m.[39m_skip_invalid:
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/_plotly_utils/basevalidators.py:1383[0m, in [0;36mColorValidator.validate_coerce[0;34m(self, v, should_raise)[0m
+[1;32m   1381[0m     validated_v [38;5;241m=[39m [38;5;28mself[39m[38;5;241m.[39mvc_scalar(v)
+[1;32m   1382[0m     [38;5;28;01mif[39;00m validated_v [38;5;129;01mis[39;00m [38;5;28;01mNone[39;00m [38;5;129;01mand[39;00m should_raise:
+[0;32m-> 1383[0m         [38;5;28mself[39m[38;5;241m.[39mraise_invalid_val(v)
+[1;32m   1385[0m     v [38;5;241m=[39m validated_v
+[1;32m   1387[0m [38;5;28;01mreturn[39;00m v
+
+File [0;32m~/anaconda3/lib/python3.11/site-packages/_plotly_utils/basevalidators.py:296[0m, in [0;36mBaseValidator.raise_invalid_val[0;34m(self, v, inds)[0m
+[1;32m    293[0m             [38;5;28;01mfor[39;00m i [38;5;129;01min[39;00m inds:
+[1;32m    294[0m                 name [38;5;241m+[39m[38;5;241m=[39m [38;5;124m"[39m[38;5;124m[[39m[38;5;124m"[39m [38;5;241m+[39m [38;5;28mstr[39m(i) [38;5;241m+[39m [38;5;124m"[39m[38;5;124m][39m[38;5;124m"[39m
+[0;32m--> 296[0m         [38;5;28;01mraise[39;00m [38;5;167;01mValueError[39;00m(
+[1;32m    297[0m [38;5;250m            [39m[38;5;124;03m"""[39;00m
+[1;32m    298[0m [38;5;124;03m    Invalid value of type {typ} received for the '{name}' property of {pname}[39;00m
+[1;32m    299[0m [38;5;124;03m        Received value: {v}[39;00m
+[1;32m    300[0m 
+[1;32m    301[0m [38;5;124;03m{valid_clr_desc}"""[39;00m[38;5;241m.[39mformat(
+[1;32m    302[0m                 name[38;5;241m=[39mname,
+[1;32m    303[0m                 pname[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mparent_name,
+[1;32m    304[0m                 typ[38;5;241m=[39mtype_str(v),
+[1;32m    305[0m                 v[38;5;241m=[39m[38;5;28mrepr[39m(v),
+[1;32m    306[0m                 valid_clr_desc[38;5;241m=[39m[38;5;28mself[39m[38;5;241m.[39mdescription(),
+[1;32m    307[0m             )
+[1;32m    308[0m         )
+
+[0;31mValueError[0m: 
+    Invalid value of type 'builtins.str' received for the 'color' property of bar.marker
+        Received value: 'viridis_2'
+
+    The 'color' property is a color and may be specified as:
+      - A hex string (e.g. '#ff0000')
+      - An rgb/rgba string (e.g. 'rgb(255,0,0)')
+      - An hsl/hsla string (e.g. 'hsl(0,100%,50%)')
+      - An hsv/hsva string (e.g. 'hsv(0,100%,100%)')
+      - A named CSS color:
+            aliceblue, antiquewhite, aqua, aquamarine, azure,
+            beige, bisque, black, blanchedalmond, blue,
+            blueviolet, brown, burlywood, cadetblue,
+            chartreuse, chocolate, coral, cornflowerblue,
+            cornsilk, crimson, cyan, darkblue, darkcyan,
+            darkgoldenrod, darkgray, darkgrey, darkgreen,
+            darkkhaki, darkmagenta, darkolivegreen, darkorange,
+            darkorchid, darkred, darksalmon, darkseagreen,
+            darkslateblue, darkslategray, darkslategrey,
+            darkturquoise, darkviolet, deeppink, deepskyblue,
+            dimgray, dimgrey, dodgerblue, firebrick,
+            floralwhite, forestgreen, fuchsia, gainsboro,
+            ghostwhite, gold, goldenrod, gray, grey, green,
+            greenyellow, honeydew, hotpink, indianred, indigo,
+            ivory, khaki, lavender, lavenderblush, lawngreen,
+            lemonchiffon, lightblue, lightcoral, lightcyan,
+            lightgoldenrodyellow, lightgray, lightgrey,
+            lightgreen, lightpink, lightsalmon, lightseagreen,
+            lightskyblue, lightslategray, lightslategrey,
+            lightsteelblue, lightyellow, lime, limegreen,
+            linen, magenta, maroon, mediumaquamarine,
+            mediumblue, mediumorchid, mediumpurple,
+            mediumseagreen, mediumslateblue, mediumspringgreen,
+            mediumturquoise, mediumvioletred, midnightblue,
+            mintcream, mistyrose, moccasin, navajowhite, navy,
+            oldlace, olive, olivedrab, orange, orangered,
+            orchid, palegoldenrod, palegreen, paleturquoise,
+            palevioletred, papayawhip, peachpuff, peru, pink,
+            plum, powderblue, purple, red, rosybrown,
+            royalblue, rebeccapurple, saddlebrown, salmon,
+            sandybrown, seagreen, seashell, sienna, silver,
+            skyblue, slateblue, slategray, slategrey, snow,
+            springgreen, steelblue, tan, teal, thistle, tomato,
+            turquoise, violet, wheat, white, whitesmoke,
+            yellow, yellowgreen
+      - A number that will be interpreted as a color
+        according to bar.marker.colorscale
+      - A list or array of any of the above
+
