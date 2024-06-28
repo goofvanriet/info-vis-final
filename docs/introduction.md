@@ -1,5 +1,5 @@
 <!-- #region -->
-<span style="font-size: 32px; font-weight: bold;">Welvaart, Uitstoot & Verduurzaming</span>
+<span style="font-size: 32px">Welvaart, Uitstoot & Verduurzaming</span>
 
 
 ## Inleiding
