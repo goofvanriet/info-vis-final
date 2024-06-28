@@ -1,5 +1,7 @@
 # Datasets en Voorbewerking
 
+[Klik hier om naar Datasets en Referenties te gaan](references.md)
+
 Bij de start van dit project hebben we een specifiek onderwerp gekozen om gerichter te kunnen zoeken naar relevante datasets. Na het vaststellen van ons onderwerp voerden we een uitgebreide zoektocht uit naar datasets die waardevolle gegevens bevatten voor onze analyse. Tijdens een teamvergadering hebben we deze datasets grondig besproken en onderzocht op mogelijke correlaties. Dit proces stelde ons in staat het verhaal, dat vanuit twee verschillende perspectieven moet worden gepresenteerd, verder te verfijnen. Uiteindelijk besloten we vijf datasets te gebruiken: vier afkomstig van [Our World in Data](https://ourworldindata.org/) en één van de [Human Developments Reports](https://hdr.undp.org/). Door deze data te combineren, konden we interessante correlaties visualiseren die ondersteunend waren voor beide invalshoeken van ons verhaal. Na diverse overleggen en brainstormsessies verdiepten we ons in de relatie tussen de welvaart van landen en trends in CO2-uitstoot, waarbij we specifiek keken naar hoe de variabelen uit onze gekozen datasets beide verhaallijnen konden ondersteunen.
 
 ## Schoonmaak
