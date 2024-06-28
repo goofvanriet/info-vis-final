@@ -4,7 +4,7 @@ Om het project in goede banen te leiden hielden wij regelmatig (2 a 3 keer per w
 
 
 ## Anou
-
+Anou nam deel aan het maken van grafieken, het opstellen van het verhaal met argumenten en datasets die passen bij het project. Anou presenteerde het project ook voor feedback van collega's en schreef de taakverdeling.
 
 
 ## Efehan
