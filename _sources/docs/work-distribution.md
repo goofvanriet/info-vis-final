@@ -4,7 +4,7 @@ Om het project in goede banen te leiden hielden wij regelmatig (2 a 3 keer per w
 
 
 ## Anou
-Anou nam deel aan het maken van grafieken, het opstellen van het verhaal met argumenten en datasets die passen bij het project. Anou presenteerde het project ook voor feedback van collega's en schreef de taakverdeling.
+Anou nam deel aan het maken van grafieken over de HDI-trend, HDI en hernieuwbare energie, en de trend van energiekosten van herbruikbare energiebronnen. Verder hielp Anou met het opstellen van het verhaal, en zocht ze argumenten en datasets die passen bij het project. Anou presenteerde het project ook voor feedback van collega's en schreef de taakverdeling.
 
 
 ## Efehan

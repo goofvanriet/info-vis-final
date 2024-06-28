@@ -1,5 +1,8 @@
 <!-- #region -->
-# Inleiding
+# Welvaart, Uitstoot & Verduurzaming
+
+
+## Inleiding
 
 Terwijl economische groei lange tijd werd gezien als een manier om de wereldwijde levensstandaarden te verbeteren, roept deze ontwikkeling de laatste decennia vragen op over de duurzaamheid hiervan.
 Alhoewel  er nieuwe wet- en regelgeving is ingevoerd die gericht is op het verminderen van wereldwijde CO2-emissies, blijft de klimaatverandering een onopgelost probleem.
