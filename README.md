@@ -58,7 +58,7 @@ Het hoofdnotebook voor het verhaal is './notebooks/story.ipynb'. Tussen de tekst
 
 # Deploy
 
-Om naar GitHub Pages te implementeren, kunt u het volgende commando uitvoeren in een terminal: './scripts/deploy.sh.' Hiermee wordt het project gebouwd, worden de notebooks toegevoegd en wordt metadata toegevoegd aan 'story.ipynb' om de invoercellen te verbergen.
+Om naar GitHub Pages te implementeren, kunt u het volgende commando uitvoeren in een terminal: './scripts/deploy.sh'. Hiermee wordt het project gebouwd, worden de notebooks toegevoegd en wordt metadata toegevoegd aan 'story.ipynb' om de invoercellen te verbergen.
 
 # Auteurs
 - Anou Prins: 13427644
