@@ -1,6 +1,6 @@
 ![](./static/images/banner.png?)
 
-[Click here to view the data story]()
+[Klik hier om naar de data story te gaan](../notebooks/story.ipynb)
 
 # Information Visualisation: Welvaart, Uitstoot en Duurzaamheid
 

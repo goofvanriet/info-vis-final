@@ -14,7 +14,7 @@ Om ons onderwerp in te leiden en de stand van zaken van CO2-emissies te visualis
 ![](../static/images/co2_sources.png)
 
 
-[Click here to read the data story](../notebooks/story.ipynb)
+[Klik hier om naar de data story te gaan](../notebooks/story.ipynb)
 
 **Auteurs**
 
