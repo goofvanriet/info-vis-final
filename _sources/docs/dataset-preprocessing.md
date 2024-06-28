@@ -4,13 +4,11 @@ Bij de start van dit project hebben we een specifiek onderwerp gekozen om gerich
 
 ## Schoonmaak
 
-In dit project hebben we een grondige data-schoonmaak uitgevoerd om de betrouwbaarheid van onze visualisaties te waarborgen. Allereerst selecteerden we de relevante kolommen uit verschillende datasets en voegden deze samen tot een nieuwe dataset. Dit was essentieel om een helder overzicht te krijgen van de cruciale informatie die nodig was.Daarnaast creëerden we meerdere subsets van de relevante data, elk toegespitst op specifieke kolommen die van belang zijn voor bepaalde visualisaties. Dit hielp ons om doelgericht te werken aan specifieke visualisaties en bevorderde de efficiëntie van onze analyses.
+In dit project hebben we een grondige data-schoonmaak uitgevoerd om de betrouwbaarheid van onze visualisaties te waarborgen. Allereerst selecteerden we de relevante kolommen uit verschillende datasets en voegden deze samen tot een nieuwe dataset. Dit was essentieel om een helder overzicht te krijgen van de cruciale informatie die nodig was. Daarnaast creëerden we meerdere subsets van de relevante data, elk toegespitst op specifieke kolommen die van belang zijn voor bepaalde visualisaties. Dit hielp ons om doelgericht te werken aan specifieke visualisaties en bevorderde de efficiëntie van onze analyses.
 
-Een belangrijk aspect van de data-schoonmaak was het adresseren van ontbrekende waarden. We evalueerden zorgvuldig de relevantie van rijen met ontbrekende waarden. Indien een rij cruciale informatie bevatte die niet over het hoofd kon worden gezien, zochten we naar manieren om deze ontbrekende waarden aan te vullen of pasten alternatieve analytische methoden toe.
+Een belangrijk aspect van de data-schoonmaak was het adresseren van ontbrekende waarden. Indien een rij cruciale informatie bevatte die niet over het hoofd kon worden gezien, zochten we naar manieren om deze ontbrekende waarden aan te vullen of pasten alternatieve analytische methoden toe. Verder analyseerden we het percentage ontbrekende waarden per kolom. Bij kolommen met een hoog percentage ontbrekende waarden overwogen we verwijdering, vooral als deze niet essentieel waren. Voor kolommen met een laag percentage ontbrekende waarden pasten we technieken toe zoals het invullen van waarden met het gemiddelde of de mediaan.
 
-Verder analyseerden we het percentage ontbrekende waarden per kolom. Bij kolommen met een hoog percentage ontbrekende waarden overwogen we verwijdering, vooral als deze niet essentieel waren. Voor kolommen met een laag percentage ontbrekende waarden pasten we technieken toe zoals het invullen van waarden met het gemiddelde of de mediaan.
-
-Uiteindelijk zijn alle datasets die voor de visualisaties worden gebruikt van het type CSV. Dit was gedeeltelijk omdat de meeste van onze gedownloade datasets reeds in CSV-formaat beschikbaar waren. Bovendien hebben we voor het CSV-formaat gekozen vanwege de eenvoud en leesbaarheid. In totaal is het aantal kolommen van 107 uit vijf datasets gereduceerd naar 25 kolommen over acht datasets.
+Voor de datasets hebben we voor het CSV-formaat gekozen vanwege de eenvoud en leesbaarheid. In totaal is het aantal kolommen van 107 uit vijf datasets gereduceerd naar 25 kolommen over acht datasets.
 
 
 ## Variabelen beschrijving
@@ -22,3 +20,8 @@ De variabelen die gebruikt worden in dit project zijn hieronder overzichtelijk w
 - Discrete / Nominale variabelen: `Code`, `Country`
 
 - Discrete / Interval variabelen: `Year`
+
+
+## Aggregaties
+
+Er zijn in het proces alleen nieuwe variabelen ontstaan uit berekeningen door bepaalde variabelen relatief te maken. Dit waren simpele berekeningen waarbij de oorsponkelijke waarden van variabelen gedeeld werden door de populatie van een land. De ontstane variabelen zorgden voor relevantere waarden die nodig waren voor het opstellen van de visualisaties.

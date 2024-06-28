@@ -61,9 +61,10 @@
     <script>DOCUMENTATION_OPTIONS.pagename = 'docs/dataset-preprocessing';</script>
     <script src="../_static/js/enforce-light-theme.js?v=9baa896a"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <link rel="icon" href="../_static/favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Welvaart, uitstoot &amp; verduurzaming" href="../notebooks/story.html" />
+    <link rel="next" title="Welvaart, Uitstoot &amp; Verduurzaming" href="../notebooks/story.html" />
     <link rel="prev" title="Inleiding" href="introduction.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -180,7 +181,11 @@
         </ul>
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Datasets en Voorbewerking</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../notebooks/story.html">Welvaart, uitstoot &amp; verduurzaming</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../notebooks/story.html">Welvaart, Uitstoot &amp; Verduurzaming</a></li>
+
+
+
+
 
 
 <li class="toctree-l1"><a class="reference internal" href="reflection.html">Reflectie</a></li>
@@ -350,6 +355,7 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schoonmaak">Schoonmaak</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabelen-beschrijving">Variabelen beschrijving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregaties">Aggregaties</a></li>
 </ul>
             </nav>
         </div>
@@ -366,10 +372,9 @@ document.write(`
 <p>Bij de start van dit project hebben we een specifiek onderwerp gekozen om gerichter te kunnen zoeken naar relevante datasets. Na het vaststellen van ons onderwerp voerden we een uitgebreide zoektocht uit naar datasets die waardevolle gegevens bevatten voor onze analyse. Tijdens een teamvergadering hebben we deze datasets grondig besproken en onderzocht op mogelijke correlaties. Dit proces stelde ons in staat het verhaal, dat vanuit twee verschillende perspectieven moet worden gepresenteerd, verder te verfijnen. Uiteindelijk besloten we vijf datasets te gebruiken: vier afkomstig van <a class="reference external" href="https://ourworldindata.org/">Our World in Data</a> en één van de <a class="reference external" href="https://hdr.undp.org/">Human Developments Reports</a>. Door deze data te combineren, konden we interessante correlaties visualiseren die ondersteunend waren voor beide invalshoeken van ons verhaal. Na diverse overleggen en brainstormsessies verdiepten we ons in de relatie tussen de welvaart van landen en trends in CO2-uitstoot, waarbij we specifiek keken naar hoe de variabelen uit onze gekozen datasets beide verhaallijnen konden ondersteunen.</p>
 <section id="schoonmaak">
 <h2>Schoonmaak<a class="headerlink" href="#schoonmaak" title="Link to this heading">#</a></h2>
-<p>In dit project hebben we een grondige data-schoonmaak uitgevoerd om de betrouwbaarheid van onze visualisaties te waarborgen. Allereerst selecteerden we de relevante kolommen uit verschillende datasets en voegden deze samen tot een nieuwe dataset. Dit was essentieel om een helder overzicht te krijgen van de cruciale informatie die nodig was.Daarnaast creëerden we meerdere subsets van de relevante data, elk toegespitst op specifieke kolommen die van belang zijn voor bepaalde visualisaties. Dit hielp ons om doelgericht te werken aan specifieke visualisaties en bevorderde de efficiëntie van onze analyses.</p>
-<p>Een belangrijk aspect van de data-schoonmaak was het adresseren van ontbrekende waarden. We evalueerden zorgvuldig de relevantie van rijen met ontbrekende waarden. Indien een rij cruciale informatie bevatte die niet over het hoofd kon worden gezien, zochten we naar manieren om deze ontbrekende waarden aan te vullen of pasten alternatieve analytische methoden toe.</p>
-<p>Verder analyseerden we het percentage ontbrekende waarden per kolom. Bij kolommen met een hoog percentage ontbrekende waarden overwogen we verwijdering, vooral als deze niet essentieel waren. Voor kolommen met een laag percentage ontbrekende waarden pasten we technieken toe zoals het invullen van waarden met het gemiddelde of de mediaan.</p>
-<p>Uiteindelijk zijn alle datasets die voor de visualisaties worden gebruikt van het type CSV. Dit was gedeeltelijk omdat de meeste van onze gedownloade datasets reeds in CSV-formaat beschikbaar waren. Bovendien hebben we voor het CSV-formaat gekozen vanwege de eenvoud en leesbaarheid. In totaal is het aantal kolommen van 107 uit vijf datasets gereduceerd naar 25 kolommen over acht datasets.</p>
+<p>In dit project hebben we een grondige data-schoonmaak uitgevoerd om de betrouwbaarheid van onze visualisaties te waarborgen. Allereerst selecteerden we de relevante kolommen uit verschillende datasets en voegden deze samen tot een nieuwe dataset. Dit was essentieel om een helder overzicht te krijgen van de cruciale informatie die nodig was. Daarnaast creëerden we meerdere subsets van de relevante data, elk toegespitst op specifieke kolommen die van belang zijn voor bepaalde visualisaties. Dit hielp ons om doelgericht te werken aan specifieke visualisaties en bevorderde de efficiëntie van onze analyses.</p>
+<p>Een belangrijk aspect van de data-schoonmaak was het adresseren van ontbrekende waarden. Indien een rij cruciale informatie bevatte die niet over het hoofd kon worden gezien, zochten we naar manieren om deze ontbrekende waarden aan te vullen of pasten alternatieve analytische methoden toe. Verder analyseerden we het percentage ontbrekende waarden per kolom. Bij kolommen met een hoog percentage ontbrekende waarden overwogen we verwijdering, vooral als deze niet essentieel waren. Voor kolommen met een laag percentage ontbrekende waarden pasten we technieken toe zoals het invullen van waarden met het gemiddelde of de mediaan.</p>
+<p>Voor de datasets hebben we voor het CSV-formaat gekozen vanwege de eenvoud en leesbaarheid. In totaal is het aantal kolommen van 107 uit vijf datasets gereduceerd naar 25 kolommen over acht datasets.</p>
 </section>
 <section id="variabelen-beschrijving">
 <h2>Variabelen beschrijving<a class="headerlink" href="#variabelen-beschrijving" title="Link to this heading">#</a></h2>
@@ -379,6 +384,10 @@ document.write(`
 <li><p>Discrete / Nominale variabelen: <code class="docutils literal notranslate"><span class="pre">Code</span></code>, <code class="docutils literal notranslate"><span class="pre">Country</span></code></p></li>
 <li><p>Discrete / Interval variabelen: <code class="docutils literal notranslate"><span class="pre">Year</span></code></p></li>
 </ul>
+</section>
+<section id="aggregaties">
+<h2>Aggregaties<a class="headerlink" href="#aggregaties" title="Link to this heading">#</a></h2>
+<p>Er zijn in het proces alleen nieuwe variabelen ontstaan uit berekeningen door bepaalde variabelen relatief te maken. Dit waren simpele berekeningen waarbij de oorsponkelijke waarden van variabelen gedeeld werden door de populatie van een land. De ontstane variabelen zorgden voor relevantere waarden die nodig waren voor het opstellen van de visualisaties.</p>
 </section>
 </section>
 
@@ -426,7 +435,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Welvaart, uitstoot &amp; verduurzaming</p>
+        <p class="prev-next-title">Welvaart, Uitstoot &amp; Verduurzaming</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -448,6 +457,7 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#schoonmaak">Schoonmaak</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variabelen-beschrijving">Variabelen beschrijving</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#aggregaties">Aggregaties</a></li>
 </ul>
   </nav></div>
 
